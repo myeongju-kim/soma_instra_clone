@@ -1,9 +1,30 @@
-import { addEntryToDb, clearAllEntries } from '../../database.js';
+import { addEntryToDb, clearAllEntries, getEntryFromDb } from '../../database.js';
 
 const addBioEventListeners = () => {
   const editBioButton = document.querySelector('.edit-bio-button')
   const editBioForm = document.querySelector('.edit-bio-form')
   const cancelFormButton = document.querySelector('.cancel-edit-bio')
+  const profilePhotoInput = document.querySelector('#addProfileInput')
+  const profileImage = document.querySelector('.profile-photo img')
+
+  // profile change
+  profilePhotoInput.addEventListener('change', () => {
+    const reader = new FileReader()
+    
+    if (!profilePhotoInput.files[0]) return;
+    //바이너리 파일을 Base64 Encode 문자열로 반환
+    reader.readAsDataURL(profilePhotoInput.files[0])
+    
+
+    //읽기 동작이 완료되었을 때
+    reader.addEventListener('load', () => {
+    
+     clearAllEntries('profile') 
+     addEntryToDb('profile', reader.result)
+
+     profileImage.src = reader.result;
+  })
+})
 
   editBioButton.addEventListener('click', () => {
     editBioForm.style.display = 'block'
@@ -26,9 +47,17 @@ const addBioEventListeners = () => {
     editBioForm.style.display = 'none'
   })
 
+
   cancelFormButton.addEventListener('click', () => {
     editBioForm.style.display = 'none'
   })
 }
 
-export default addBioEventListeners
+const readProfilePhto = async () => {
+  const profileImage = document.querySelector('.profile-photo img')
+  const profileData = await getEntryFromDb('profile')
+  profileImage.src = profileData;
+}
+
+
+export { addBioEventListeners, readProfilePhto }

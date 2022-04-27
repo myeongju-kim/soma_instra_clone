@@ -5,6 +5,7 @@ onRequest.onupgradeneeded = () => {
   const database = onRequest.result
   database.createObjectStore('bio', {autoIncrement: true})
   database.createObjectStore('gallery', {autoIncrement: true})
+  database.createObjectStore('profile', {autoIncrement: true})
 }
 
 onRequest.onerror = () => {

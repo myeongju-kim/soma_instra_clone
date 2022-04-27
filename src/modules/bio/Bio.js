@@ -12,6 +12,10 @@ const userInfo = await getEntryFromDb('bio');
   <section class="bio">
     <div class="profile-photo">
       <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg" alt="profile-photo">
+      <input type="file" name="profile" id="addProfileInput" accept="image/*">
+      <label for="addProfileInput">
+        <i class="add-profile fas fa-plus-square"></i>
+      </label>
     </div>
     <div class="profile-info">
       <p class="name"> ${userInfo[0] ? userInfo[0].name : 'Please enter your bio' }</p>

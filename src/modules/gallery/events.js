@@ -13,6 +13,7 @@ const addGalleryEventListeners = () => {
 // 이미지 파일 내용을 읽어들이는 FileReader 객체를 reader 에 할당
     const reader = new FileReader()
     
+    if (!photoInput.files[0]) return;
     //바이너리 파일을 Base64 Encode 문자열로 반환
     reader.readAsDataURL(photoInput.files[0])
 
