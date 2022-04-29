@@ -1,5 +1,6 @@
 @import './gallery.css';
 @import './bio.css';
+@import './slider.css';
 
 body {
   background-color: #FAFAFA;
@@ -57,7 +58,7 @@ nav {
 
 .bio {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr 1fr;
   height: 13em;
   padding: 3em 0 0 3em;
   border-bottom: 0.2px solid #DBDBDB;
@@ -92,7 +93,13 @@ nav {
   width: 6em;
   height: 2em;
   border: unset;
+  border-radius: 5px;
   cursor: pointer;
+  /* transition: all 0.2s linear; */
+}
+
+.profile-info button:hover {
+  background-color: #0083e2;
 }
 
 .edit-bio-form {
@@ -104,6 +111,21 @@ nav {
   margin-right: auto;
   width: 17em;
   height: 7em;
+  padding: 1em;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 3px 0px #333333bf;
+}
+
+.edit-favorite-form {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 17em;
+  height: 3em;
   padding: 1em;
   text-align: center;
   background: #ffffff;

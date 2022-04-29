@@ -13,3 +13,28 @@
     bottom: 20px;
     cursor: pointer;
 }
+
+.favorite-info {
+    width: 100%;
+    height: 100%;
+  }
+
+  .favorite-info p {
+    font-size: 1.5em;
+    color: #545454;
+  }
+
+  .favorite {
+    width: 50%;
+    margin-bottom: 3px;
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #009900;
+    color: #fff;
+  }

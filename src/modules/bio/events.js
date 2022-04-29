@@ -1,4 +1,4 @@
-import { addEntryToDb, clearAllEntries, getEntryFromDb } from '../../database.js';
+import { addEntryToDb, clearAllEntries, getEntryFromDb, putEntryToDb } from '../../database.js';
 
 const addBioEventListeners = () => {
   const editBioButton = document.querySelector('.edit-bio-button')
@@ -6,8 +6,11 @@ const addBioEventListeners = () => {
   const cancelFormButton = document.querySelector('.cancel-edit-bio')
   const profilePhotoInput = document.querySelector('#addProfileInput')
   const profileImage = document.querySelector('.profile-photo img')
+  const editFavoriteButton = document.querySelectorAll('.favorite')
+  const editFavoriteForm = document.querySelector('.edit-favorite-form')
+  const cancelFormButton2 = document.querySelector('.cancel-edit-favorite')
 
-  // profile change
+  // Edit Profile
   profilePhotoInput.addEventListener('change', () => {
     const reader = new FileReader()
     
@@ -26,6 +29,7 @@ const addBioEventListeners = () => {
   })
 })
 
+  // Edit Bio
   editBioButton.addEventListener('click', () => {
     editBioForm.style.display = 'block'
   })
@@ -51,13 +55,40 @@ const addBioEventListeners = () => {
   cancelFormButton.addEventListener('click', () => {
     editBioForm.style.display = 'none'
   })
+
+  // Edit Favorite
+  let favnum = 0;
+
+  for (let i = 0; i < editFavoriteButton.length; i++) {
+    editFavoriteButton[i].addEventListener('click', () => {
+      editFavoriteForm.style.display = 'block'
+      favnum = i;
+    })
+  }
+
+  editFavoriteForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const fav = document.querySelector('#fav').value;
+    document.querySelector('#fav').value = null;
+
+    putEntryToDb('favorite', fav, favnum + 1);
+
+    editFavoriteButton[favnum].innerText = fav
+    console.log(favnum);
+    editFavoriteForm.style.display = 'none'
+  })
+
+  cancelFormButton2.addEventListener('click', () => {
+    editFavoriteForm.style.display = 'none'
+  })
+
 }
 
 const readProfilePhto = async () => {
   const profileImage = document.querySelector('.profile-photo img')
   const profileData = await getEntryFromDb('profile')
-  profileImage.src = profileData;
+  if (profileData.length !== 0) profileImage.src = profileData
 }
-
 
 export { addBioEventListeners, readProfilePhto }

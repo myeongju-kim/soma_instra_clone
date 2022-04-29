@@ -6,6 +6,7 @@ onRequest.onupgradeneeded = () => {
   database.createObjectStore('bio', {autoIncrement: true})
   database.createObjectStore('gallery', {autoIncrement: true})
   database.createObjectStore('profile', {autoIncrement: true})
+  database.createObjectStore('favorite', {autoIncrement: true})
 }
 
 onRequest.onerror = () => {
@@ -18,6 +19,20 @@ const addEntryToDb = (storeName, entry) => {
   const transaction = database.transaction([storeName], 'readwrite')
   const store = transaction.objectStore(storeName)
   store.add(entry)
+
+  // transaction.oncomplete = () => alert(`Entry added to ${storeName}!`)
+  transaction.onerror = () => {
+    console.log(`error adding Entry to ${storeName}.`)
+    console.log(transaction.error);
+  }
+}
+
+//데이터베이스 수정
+const putEntryToDb = (storeName, entry, key) => {
+  const database = onRequest.result
+  const transaction = database.transaction([storeName], 'readwrite')
+  const store = transaction.objectStore(storeName)
+  store.put(entry, key)
 
   // transaction.oncomplete = () => alert(`Entry added to ${storeName}!`)
   transaction.onerror = () => {
@@ -54,4 +69,4 @@ const clearAllEntries = (storeName) => {
   store.clear()
 }
 
-export { onRequest, addEntryToDb, getEntryFromDb, clearAllEntries }
+export { onRequest, addEntryToDb, getEntryFromDb, clearAllEntries, putEntryToDb }
