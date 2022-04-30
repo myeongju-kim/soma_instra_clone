@@ -1,0 +1,44 @@
+.select-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.recommend-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    gap: 8px;
+    }
+
+.ranking-container {
+    flex: 1 1 auto;
+    /* background-color: cyan; */
+    margin: 5px;
+}
+
+#recommend-container-1 {
+visibility: visible;
+
+    }
+
+    #recommend-container-2 {
+display: none;
+flex-direction: column;
+        }
+
+.ranking-item {
+    padding: 5px;
+    border: 0.5px solid #aaa;
+    margin-bottom: 5px;
+   
+}
+
+.ranking-item:hover {
+    background-color: #aaa;
+    color: white;
+}
+
+#recommend-back-button {
+    cursor: pointer;
+}

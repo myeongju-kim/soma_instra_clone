@@ -8,6 +8,7 @@ const Gallery = () => {
       <section class="gallery">
         <div class="gallery-loader">
           <img src="./loader.svg" alt="">
+          
         </div>
       </section>
     `

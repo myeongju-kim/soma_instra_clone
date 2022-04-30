@@ -6,7 +6,13 @@ const EditBio = () => {
         <input type="text" id="about" placeholder="about" / required> </br>
         <button type="button" class="cancel-edit-bio">Cancel</button>
         <button type="submit">Submit</button>
+
+        
       </form>
+
+      
+
+      
     `
   }
   
