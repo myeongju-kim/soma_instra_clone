@@ -1,0 +1,10 @@
+#up_img{
+  filter: brightness(100%);
+}
+#ex-in{
+  position:absolute;
+  width:280px;
+  z-index:2;
+  opacity:0.01;
+  filter:alpha(opacity=50);
+}

@@ -1,7 +1,8 @@
+import Modal from "../modal/Modal.js";
+import "./Gallery.css";
 const Gallery = () => {
-    return `
-      <input type="file" name="photo" id="addPhotoInput" accept="image/*">
-      <label for="addPhotoInput">
+  return `
+      <label id="modalBtn">
         <i class="add-photo fas fa-plus-square"></i>
       </label>
       <div class="gallery-nav"></div>
@@ -10,8 +11,8 @@ const Gallery = () => {
           <img src="./loader.svg" alt="">
         </div>
       </section>
+      ${Modal()}
     `
   }
-  
-  export default Gallery;
-  
+
+export default Gallery;
