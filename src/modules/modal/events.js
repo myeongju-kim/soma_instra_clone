@@ -5,6 +5,7 @@ const reader = new FileReader();
 const uploadModal = () => {
   const modalMain = document.querySelector(".uploadModal");
   const modalBtn = document.querySelector(".add-photo");
+
   modalBtn.addEventListener("click", () => {
     let stateDisplay = modalMain.style.display;
     if (stateDisplay === "none") {
@@ -55,3 +56,4 @@ const uploadButtonEventListeners = () => {
 };
 
 export { uploadModal, addGalleryEventListeners, uploadButtonEventListeners };
+
