@@ -1,6 +1,19 @@
+
+#popup{
+  display:none;
+  position:absolute;
+  z-index:5;
+  width: 200px;
+  height: 300px;
+  top:49%;
+  left:19%;
+  background-image:url('background.png');
+  background-repeat: no-repeat;
+}
 #up_img{
   filter: brightness(100%);
 }
+
 #ex-in{
   position:absolute;
   width:280px;
@@ -8,3 +21,5 @@
   opacity:0.01;
   filter:alpha(opacity=50);
 }
+
+

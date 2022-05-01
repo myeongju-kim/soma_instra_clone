@@ -7,6 +7,7 @@ const Gallery = () => {
       </label>
       <div class="gallery-nav"></div>
       <section class="gallery">
+        <div id="popup"></div>
         <div class="gallery-loader">
           <img src="./loader.svg" alt="">
         </div>

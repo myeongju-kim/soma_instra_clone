@@ -7,8 +7,11 @@ const addImagesToGallery = async () => {
   
   const galleryItems = galleryData.reverse().map(({ resultImage, mytext }) => {
     return `
+      <div id="popup"></div>
       <a href="#" class="item">
-        <img id="up_img" alt="stuff" src=${resultImage}>
+        <img id="up_img" alt="stuff" src=${resultImage}
+        onmouseover="document.getElementById('popup').style.display='block'" 
+        onmouseout="document.getElementById('popup').style.display='none'">
       </a>
       <input type="range" min="3" max="15" id="ex-in" 
       oninput="var bright_filter='brightness('+this.value*10+'%'+')';
