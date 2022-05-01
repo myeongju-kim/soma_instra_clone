@@ -10,6 +10,9 @@ const addImagesToGallery = async () => {
     return `
       <a href="#" class="item">
         <img alt="stuff" src=${resultImage}>
+        <div class="detailView">
+          <img alt="detailStuff" src=${resultImage}>
+        </div>
       </a>
     `
   })
@@ -17,4 +20,20 @@ const addImagesToGallery = async () => {
   gallerySection.innerHTML = galleryItems.join('')
 }
 
-export { addImagesToGallery }
+const postDetailView = () => {
+  const images = document.querySelectorAll('.item');
+
+  console.log(images.length)
+
+  for (let i = 0; i < images.length; i++) {
+    images.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const detailDiv = e.target.childNodes[1];
+      detailDiv.style.display = 'block';
+    })
+  }
+
+}
+
+export { addImagesToGallery, postDetailView }
