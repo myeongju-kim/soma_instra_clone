@@ -1,5 +1,6 @@
 import { getEntryFromDb } from '../../database.js'
 
+
 const addImagesToGallery = async () => {
   const gallerySection = document.querySelector('.gallery')
   //4. getEntryFromDb()를 사용해서 gallery 테이블에 담긴 데이터를 galleryData에 할당하세요. await 뒤에 작성하세요.

@@ -1,7 +1,7 @@
 import { onRequest } from './database.js'
 import Bio from './modules/bio/Bio.js'
 //modules/bio/events.js의 addBioEventListeners 를 Import하세요
-import addBioEventListeners from './modules/bio/events.js'
+import { addBioEventListeners, readProfilePhto } from './modules/bio/events.js'
 import Gallery from './modules/gallery/Gallery.js'
 import { addImagesToGallery } from './modules/gallery/events.js'
 import {
@@ -28,6 +28,8 @@ onRequest.onsuccess = async () => {
   addBioEventListeners();
   addGalleryEventListeners();
   addImagesToGallery();
+  readProfilePhto();
   uploadModal();
   uploadButtonEventListeners();
 };
+
