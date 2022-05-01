@@ -1,4 +1,43 @@
 #modalBtn {
   border: 1px solid black;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+#modalBtn:hover {
+  background-color:darkgrey;
+}
+
+.uploadModal {
+  position: fixed;
+  right: 10%;
+  bottom: 10%;
+
+  display: none;
+  width: 17em;
+  height: 8em;
+  padding: 1em;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 3px 0px #333333bf;
+}
+
+#addTextInput {
+  margin-top: 10px;
+}
+
+#uploadBtn {
+  background-color: #0095F6;
+  color: #fff;
+  font-size: 1em;
+  width: 4em;
+  height: 2em;
+  border: unset;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#uploadBtn:hover {
+  background-color: #0083e2;
 }

@@ -1,6 +1,8 @@
 @import './gallery.css';
 @import './bio.css';
 @import './slider.css';
+@import './recommend.css';
+
 
 body {
   background-color: #FAFAFA;
@@ -50,10 +52,8 @@ nav {
   vertical-align: middle;
 }
 
-.container {
+.main-container {
   padding: 0 15%;
- 
-
 }
 
 .bio {
@@ -109,8 +109,8 @@ nav {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 17em;
-  height: 7em;
+  width: 20em;
+  height: 8em;
   padding: 1em;
   text-align: center;
   background: #ffffff;
@@ -124,8 +124,8 @@ nav {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 17em;
-  height: 3em;
+  width: 15em;
+  height: 5em;
   padding: 1em;
   text-align: center;
   background: #ffffff;

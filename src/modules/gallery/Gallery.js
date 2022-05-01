@@ -2,13 +2,12 @@ import Modal from "../modal/Modal.js";
 
 const Gallery = () => {
   return `
-      <label id="modalBtn">
-        <i class="add-photo fas fa-plus-square"></i>
-      </label>
+      <i class="add-photo fas fa-plus-square"></i>
       <div class="gallery-nav"></div>
       <section class="gallery">
         <div class="gallery-loader">
           <img src="./loader.svg" alt="">
+          
         </div>
       </section>
       ${Modal()}

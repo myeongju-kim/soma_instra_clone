@@ -1,3 +1,4 @@
+import React from 'react'
 import { onRequest } from './database.js'
 import Bio from './modules/bio/Bio.js'
 //modules/bio/events.js의 addBioEventListeners 를 Import하세요
@@ -10,14 +11,22 @@ import {
   uploadButtonEventListeners,
 } from './modules/modal/events.js'
 import Nav from './modules/nav/Nav.js'
+import Recommend from './modules/recommend/Recommend.js'
+import Recom from './modules/recommend/Recom.js'
+import { addRecomEventListeners} from './modules/recommend/events.js'
+
 
 const App = async () => {
 
   return `
+
     ${Nav()}
-    <div class="container">
+    <div class="main-container">
       ${await Bio()}
       ${Gallery()}
+      ${Recommend()}
+      
+
     </div>
   `
 }
@@ -31,5 +40,6 @@ onRequest.onsuccess = async () => {
   readProfilePhto();
   uploadModal();
   uploadButtonEventListeners();
+  addRecomEventListeners();
 };
 
