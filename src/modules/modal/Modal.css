@@ -14,12 +14,19 @@
   bottom: 10%;
 
   display: none;
-  width: 17em;
-  height: 8em;
+  width: 40em;
+  height: 20em;
   padding: 1em;
   text-align: center;
   background: #ffffff;
   box-shadow: 0px 0px 3px 0px #333333bf;
+  z-index: 2;
+}
+
+#addTextInput {
+  height: 70%;
+  width: 80%;
+  border-radius: 20px;
 }
 
 #addTextInput {
